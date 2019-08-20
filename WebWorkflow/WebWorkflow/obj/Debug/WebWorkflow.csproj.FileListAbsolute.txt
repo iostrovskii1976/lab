@@ -47,6 +47,7 @@ C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\ru\System.Web.Webpages.Deployment.reso
 C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\ru\System.Web.Webpages.Razor.resources.dll
 C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\ru\System.Web.Helpers.resources.dll
 C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\ru\System.Web.Mvc.resources.dll
-C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.csprojResolveAssemblyReference.cache
 C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.dll
 C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.pdb
+C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\WebWorkflow.dll.CodeAnalysisLog.xml
+C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\WebWorkflow.dll.lastcodeanalysissucceeded

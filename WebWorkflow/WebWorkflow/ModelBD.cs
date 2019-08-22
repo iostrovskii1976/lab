@@ -11,10 +11,10 @@ namespace WebWorkflow.ModelBD
 
     public class User
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
         public virtual string Login { get; set; }
         public virtual string Pass { get; set; }
-        public virtual int GroupsUsersId { get; set; }
+        public virtual UserGroup Group  { get; set; }
     }
 
     //Маппинг класса User
@@ -31,19 +31,21 @@ namespace WebWorkflow.ModelBD
     }
 
 
-    public class GroupUsers
+    public class UsersGroup
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
         public virtual string GroupName { get; set; }
+        public IList<User>Users { get; set; }
     }
-    //Маппинг класса GroupUsers
-    public class GroupUsersMap : ClassMapping<GroupUsers>
+    //Маппинг класса UsersGroup
+    public class UsersGroupMap : ClassMapping<UsersGroup>
     {
-        public GroupUsersMap()
+        public UsersGroupMap()
         {
-            Table("GroupUsers");
+            Table("Group");
             Id(x => x.Id, map => { map.Column("Id"); map.Generator(Generators.Identity); });
             Property(x => x.GroupName, map => { map.Column("GroupName"); });
+            HasMany(x => x.GroupName);
         }
     }
 
@@ -67,7 +69,7 @@ namespace WebWorkflow.ModelBD
 
     public class Folders
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
         public virtual string NameFolder { get; set; }
     }
     //Маппинг класса Folders
@@ -83,9 +85,9 @@ namespace WebWorkflow.ModelBD
 
     public class DocumentVersion
     {
-        public virtual int Id { get; set; }
+        public virtual long Id { get; set; }
         public virtual byte[] File { get; set; }
-        public virtual int UsersId { get; set; }
+        public virtual int UsersId { get; set; } //ссылка на юзер
     }
     //Маппинг класса Folders
     public class DocumentVersionMap : ClassMapping<DocumentVersion>

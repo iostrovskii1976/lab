@@ -51,3 +51,4 @@ C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.dll
 C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.pdb
 C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\WebWorkflow.dll.CodeAnalysisLog.xml
 C:\GitHub\lab\WebWorkflow\WebWorkflow\bin\WebWorkflow.dll.lastcodeanalysissucceeded
+C:\GitHub\lab\WebWorkflow\WebWorkflow\obj\Debug\WebWorkflow.csprojResolveAssemblyReference.cache

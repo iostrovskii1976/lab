@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.DAL.Repositories
 {
+    [Repository]
     public class UserGroupRepositories : Repository<UserGroup>
     {
         public UserGroupRepositories(ISession session)

@@ -9,15 +9,17 @@ namespace MyWebApp.DAL
 {
     public class PermissionFolders
     {
+        public virtual long Id { get; set; }
         public virtual Folders FoldersId { get; set; }
         public virtual string AccessLevel { get; set; }
         public virtual UserGroup UserGroupId { get; set; }
-        public virtual User UserId { get; set; }
+        public virtual Person UserId { get; set; }
     }
     public class PermissionFoldersMap : ClassMap<PermissionFolders>
     {
         public PermissionFoldersMap()
         {
+            Id(u => u.Id).GeneratedBy.HiLo("1");
             References(u => u.FoldersId).Cascade.SaveUpdate();
             Map(u => u.AccessLevel).Length(50);
             References(u => u.UserGroupId).Cascade.SaveUpdate();

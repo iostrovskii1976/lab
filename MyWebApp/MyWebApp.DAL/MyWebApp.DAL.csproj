@@ -70,10 +70,11 @@
     <Compile Include="Repositories\DocumentVersionRepositories.cs" />
     <Compile Include="Repositories\FoldersRepositories.cs" />
     <Compile Include="Repositories\PermissionFoldersRepositories.cs" />
+    <Compile Include="Repositories\RepositoriesAtribut.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\UserGroupRepositories.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserGroup.cs" />
   </ItemGroup>

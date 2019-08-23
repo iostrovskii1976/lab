@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.DAL
 {
-    public class Document
+    public class Document : Folders
     {
         public virtual string DocumentType { get; set; }
         public virtual DateTime Date { get; set; }
-        public virtual User UsersId { get; set; }
+        public virtual Person UsersId { get; set; }
 
     }
-    public class DocumentMap : ClassMap<Document>
+    public class DocumentMap : SubclassMap<Document>
     {
         public DocumentMap()
         {

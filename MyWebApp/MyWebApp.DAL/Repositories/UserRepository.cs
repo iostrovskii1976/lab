@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.DAL.Repositories
 {
-    public class UserRepository : Repository<User>
+    [Repository]
+    public class UserRepository : Repository<Person>
     {
         public UserRepository(ISession session)
             : base(session)

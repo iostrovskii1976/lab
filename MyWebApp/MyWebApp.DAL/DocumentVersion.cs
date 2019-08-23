@@ -11,7 +11,7 @@ namespace MyWebApp.DAL
     {
         public virtual int Id { get; set; }
         public virtual byte[] File { get; set; }
-        public virtual User UsersId { get; set; }
+        public virtual Person UsersId { get; set; }
     }
     public class DocumentVersionMap : ClassMap<DocumentVersion>
     {

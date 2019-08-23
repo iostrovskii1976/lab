@@ -11,7 +11,7 @@ namespace MyWebApp.DAL
     {
         public virtual long Id { get; set; }
         public virtual string Name { get; set; }
-        public virtual IList<User> Users { get; set; }
+        public virtual IList<Person> Users { get; set; }
     }
     public class UserGroupMap : ClassMap<UserGroup>
     {
@@ -19,7 +19,7 @@ namespace MyWebApp.DAL
         {
             Id(u => u.Id).GeneratedBy.HiLo("100");
             Map(u => u.Name).Length(100);
-            HasMany(u => u.Users).AsList().Inverse();
+            HasMany(u => u.Users).Inverse();
         }
     }
 

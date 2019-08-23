@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.DAL.Repositories
 {
-   public class DocumentVersionRepositories : Repository<DocumentVersion>
+    [Repository]
+    public class DocumentVersionRepositories : Repository<DocumentVersion>
     {
         public DocumentVersionRepositories(ISession session)
             : base(session)

@@ -19,6 +19,7 @@ using System.Web.Routing;
 using MyWebApp.DAL;
 using MyWebApp.App_Start;
 using MyWebApp.Models;
+using MyWebApp.DAL.Repositories;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace MyWebApp.App_Start
@@ -35,6 +36,7 @@ namespace MyWebApp.App_Start
             {
                 throw new Exception("Не найдена строка подключения");
             }
+            
 
             var containerBuilder = new ContainerBuilder();
             containerBuilder.Register(x => {
@@ -42,7 +44,10 @@ namespace MyWebApp.App_Start
                     .Database(MsSqlConfiguration.MsSql2012
                         .ConnectionString(connectionString.ConnectionString)
                         .Dialect<MsSql2012Dialect>())
-                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<User>())
+                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Person>())
+                    //.ExposeConfiguration(m =>{
+                    //    SchemaMetadataUpdater.QuoteTableAndColumns(m); //не совсеми БД это хорошо, лучше использовать не совпадающие ключевые слова с названиями колонок в БД
+                    //})
                     .CurrentSessionContext("call");
                     var conf = cfg.BuildConfiguration();
                     var schemeExport = new SchemaUpdate(conf);
@@ -56,9 +61,22 @@ namespace MyWebApp.App_Start
 
             containerBuilder.RegisterControllers(Assembly.GetAssembly(typeof(HomeController)));
             containerBuilder.RegisterModule(new AutofacWebTypesModule());
+            // регистрация репозитория
+            var types = typeof(Person).Assembly.GetTypes();
+            foreach (var type in types)
+            {
+                var repositoriesAtribut = type.GetCustomAttribute<RepositoryAttribute>();
+                if (repositoriesAtribut == null)
+                {
+                    continue;
+                }
+                containerBuilder.RegisterType(type);
+            }
+
             var container = containerBuilder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             app.UseAutofacMiddleware(container);
         }
+
     }
 }

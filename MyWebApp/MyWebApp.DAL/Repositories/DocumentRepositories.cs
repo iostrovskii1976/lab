@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyWebApp.DAL.Repositories
 {
+    [Repository]
     public class DocumentRepositories : Repository<Document>
     {
         public DocumentRepositories(ISession session)

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyWebApp.DAL;
+using MyWebApp.DAL.Filters;
 
 namespace MyWebApp.Controllers
 {
@@ -41,10 +42,14 @@ namespace MyWebApp.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-        //// GET: User
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        
+        public ActionResult List(UserFilter filter)
+        {
+            var model = new UserListModel
+            {
+                Items = userRepository.Find(filter)
+            };
+            return View(model);
+        }
     }
 }

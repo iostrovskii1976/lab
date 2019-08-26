@@ -26,5 +26,9 @@ namespace MyWebApp.Models
         [DataType(DataType.Password)]
         [DisplayName("Подтвердите пароль")]
         public string ConfirmPass { get; set; }
+
+        [Required]
+        [DisplayName("Введите группу")]
+        public UserGroup Group { get; set; }
     }
 }

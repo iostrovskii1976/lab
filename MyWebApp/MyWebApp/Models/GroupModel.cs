@@ -13,7 +13,7 @@ namespace MyWebApp.Models
     public class GroupModel : EmtityModel<UserGroup>
     {
         [Required]
-        //[Login]
+        [Login]
         [DisplayName("Введите название группы")]
         public string Name { get; set; }
     }

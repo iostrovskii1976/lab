@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHibernate.Criterion;
+using MyWebApp.DAL.Filters;
 
 namespace MyWebApp.DAL.Repositories
 {
     [Repository]
-    public class UserGroupRepositories : Repository<UserGroup>
+    public class UserGroupRepositories : Repository<UserGroup, UserGroupFilter>
     {
         public UserGroupRepositories(ISession session)
             : base(session)

@@ -10,6 +10,7 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js></script>
     <!--@Styles.Render("~/Content/css")-->
     <!--@Scripts.Render("~/bundles/modernizr")-->
 </head>
@@ -23,6 +24,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Пользователи", "List", "User", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

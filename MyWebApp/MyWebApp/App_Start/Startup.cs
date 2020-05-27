@@ -20,6 +20,7 @@ using MyWebApp.DAL;
 using MyWebApp.App_Start;
 using MyWebApp.Models;
 using MyWebApp.DAL.Repositories;
+using MyWebApp.DAL.Filters;
 
 [assembly: OwinStartup(typeof(Startup))]
 namespace MyWebApp.App_Start

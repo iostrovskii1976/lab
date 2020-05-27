@@ -13,7 +13,7 @@ namespace MyWebApp.Validation
         public override bool IsValid(object value)
         {
             var group = value.ToString();
-            var userGroupeRepositories = DependencyResolver.Current.GetService<UserGroupRepositories>();
+            var userGroupeRepositories = DependencyResolver.Current.GetService<UserGroupRepository>();
             return !userGroupeRepositories.Exists(group);
         }
     }

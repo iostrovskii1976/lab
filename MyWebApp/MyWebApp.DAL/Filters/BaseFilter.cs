@@ -11,4 +11,5 @@ namespace MyWebApp.DAL.Filters
         public long? Id { get; set; }
         public string SearchString { get; set; }
     }
+
 }

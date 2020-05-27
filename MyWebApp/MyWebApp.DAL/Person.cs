@@ -33,6 +33,7 @@ namespace MyWebApp.DAL
             Map(u => u.Login).Length(100);
             Map(u => u.Pass).Length(100);
             References(u => u.Group).Cascade.SaveUpdate();
+            Map(u => u.Age);
          //   References(u => u.DocumentVersions).Cascade.SaveUpdate();
          //   HasMany(u => u.Documents).Inverse();
          //   HasMany(u => u.DocumentVersions).Inverse();

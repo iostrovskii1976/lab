@@ -63,7 +63,7 @@ namespace MyWebApp.DAL.Repositories
                 AbstractCriterion clause = null;
                 foreach (var property in properties)
                 {
-                    var fs = property.GetCustomAttributes<FastSearchAttribute>();
+                    var fs = property.GetCustomAttribute<FastSearchAttribute>();
 
                     if (fs == null)
                     {

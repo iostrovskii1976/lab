@@ -8,5 +8,6 @@ namespace MyWebApp.Models
 {
     public class UserListModel: EntityListModel<Person>
     {
+        public IList<UserGroup> Group { get; set; }
     }
 }

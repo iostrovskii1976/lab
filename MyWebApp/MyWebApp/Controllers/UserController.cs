@@ -13,11 +13,15 @@ namespace MyWebApp.Controllers
     public class UserController : Controller
     {
         private UserRepository userRepository;
+        private UserGroupRepository userGroupRepository;
 
         public UserController(UserRepository userRepository)
         {
             this.userRepository = userRepository;
+            this.userGroupRepository = userGroupRepository;
         }
+
+        
 
         public ActionResult Create()
         {
@@ -36,7 +40,9 @@ namespace MyWebApp.Controllers
             var user = new Person
             {
                 Login = model.Login,
-                Pass = model.Pass
+                Pass = model.Pass,
+                Age = model.Age,
+                Group = model.Group
             };
             userRepository.Save(user);
 
@@ -50,6 +56,20 @@ namespace MyWebApp.Controllers
                 Items = userRepository.Find(filter)
             };
             return View(model);
+        }
+
+        
+        public IList<UserGroup> ViewGroupName()
+        {
+            
+            //this.userRepository = UserGroupRepository;
+
+            
+            //var model = new UserListModel
+            //{
+            //    Items = userRepository.GetUserGroupList()
+            //};
+            //return View(model);
         }
     }
 }

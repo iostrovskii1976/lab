@@ -11,7 +11,7 @@ namespace MyWebApp.DAL
     public class PermissionFolders
     {
         public virtual long Id { get; set; }
-        public virtual Folders FoldersId { get; set; }
+        public virtual Folder FoldersId { get; set; }
         public virtual string AccessLevel { get; set; }
         public virtual UserGroup UserGroupId { get; set; }
         public virtual Person UserId { get; set; }

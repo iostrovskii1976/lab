@@ -11,11 +11,10 @@ namespace MyWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public UserRepository UserRepository;
 
-        public HomeController(UserRepository userRepository)
+        public HomeController()
         {
-            this.UserRepository = UserRepository;
+
         }
 
         // GET: Home

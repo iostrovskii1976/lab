@@ -8,7 +8,7 @@ using MyWebApp.DAL.Filters;
 
 namespace MyWebApp.DAL
 {
-    public class Document : Folders
+    public class Document : Folder
     {
         public virtual string DocumentType { get; set; }
         public virtual DateTime Date { get; set; }

@@ -10,9 +10,6 @@ namespace MyWebApp.Models
     {
         public T Entity { get; set; }
 
-        //public class UserModel: EmtityModel<Person>
-        //{
-
-        //}
+        
     }
 }

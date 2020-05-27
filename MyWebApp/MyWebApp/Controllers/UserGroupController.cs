@@ -11,21 +11,21 @@ namespace MyWebApp.Controllers
 {
     public class UserGroupController : Controller
     {
-        private UserGroupRepositories userGroupRepositories;
+        private UserGroupRepository userGroupRepositories;
 
-        public UserGroupController(UserGroupRepositories userGroupRepositories)
+        public UserGroupController(UserGroupRepository userGroupRepositories)
         {
             this.userGroupRepositories = userGroupRepositories;
         }
 
         public ActionResult Create()
         {
-            var model = new GroupModel();
+            var model = new UserGroupModel();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(GroupModel model)
+        public ActionResult Create(UserGroupModel model)
         {
             if (!ModelState.IsValid)
             {
